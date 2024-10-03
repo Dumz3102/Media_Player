@@ -123,7 +123,7 @@ void managerFolder() {
                 printf("\e[1;1H\e[2J");  // Clear the screen before showing the next track
                 cout << "\nNext track: " << folder[currentTrack] << endl;
                 playMusic(folder[currentTrack]);
-                displayMenu();  // Re-display the menu after playing the next song
+//                displayMenu();  // Re-display the menu after playing the next song
                 break;
 
             case 'b':

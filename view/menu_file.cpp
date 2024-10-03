@@ -35,7 +35,7 @@ void displayMetadataMenu() {
     string filePath;
 
     // Prompt user for the file path
-    cout << "Enter the path to the audio file: ";
+    cout << "Enter the path of your file: ";
     getline(cin, filePath);
 
     // Check if the file exists
