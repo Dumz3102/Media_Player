@@ -105,6 +105,10 @@ void Playlist::playPlaylistWithControls() {
                 break;
             case 'q':
                 std::cout << "Stopping playback.\n";
+                showTimeFlag = false;  // Stop time display if quitting
+                if (timeThread.joinable()) {
+                    timeThread.join();
+                }
                 break;
             default:
                 std::cerr << "Invalid command.\n";
