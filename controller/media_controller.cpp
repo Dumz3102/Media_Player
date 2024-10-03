@@ -71,10 +71,10 @@ void displayMenu(WINDOW* main_win, int highlight) {
     werase(main_win);                                         // Delete window
     box(main_win,0,0);                                        // Bounding window
     refresh();                                                
-    mvwprintw(main_win,1,15,"MEDIA PLAYER VERSION 1.0");       // Print at y = 1, x = 4 in window
+    mvwprintw(main_win,1,15,"MEDIA PLAYER VERSION 1.0");       // Print at y = 1, x = 15 in window
     mvwprintw(main_win,2,1,"=====================================================");
 
-    const char *choices[] = {"Play music", "Metadata", "Playlists", "View media file", "Adjust Volume", "Exit"};
+    const char *choices[] = {"Play music", "Metadata", "Playlist", "View media file", "Adjust Volume", "Exit"};
     int num_choices = sizeof(choices) / sizeof(choices[0]);   // Number of menu funcs
 
     for(int i = 0; i < num_choices; i++) {
@@ -88,7 +88,8 @@ void displayMenu(WINDOW* main_win, int highlight) {
             mvwprintw(main_win, 3 + i, x_position, "%s", choices[i]);  // Print menu funcs no color 
         }
     }
-
+    mvwprintw(main_win,9,1,"=====================================================");
+    mvwprintw(main_win,10,15,"Enter 'M' to close music");
     wrefresh(main_win);                                       // Update and refresh window
 }
 

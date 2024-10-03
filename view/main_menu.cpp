@@ -33,6 +33,11 @@ int main(){
             case KEY_DOWN:
                 highlight = (highlight == 5) ? 0 : highlight + 1;
                 break;
+            case 'm':
+                // Close the audio system
+                Mix_CloseAudio();
+                SDL_Quit();
+                break;
             case 10: // Enter key
                 switch (highlight) {
                     case 0:

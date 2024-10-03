@@ -12,7 +12,7 @@
 #include "menu_play.hpp"
 
 extern std::atomic<bool> showTimeFlag;
-#define HEIGHT 10
+#define HEIGHT 12
 #define WIDTH  55
 
 void drawVolumeBar(WINDOW* win, int currentVolume, int maxVolume);
