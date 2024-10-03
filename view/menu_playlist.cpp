@@ -33,11 +33,13 @@ void displayPLaylistMenu(){
 
         switch (option) {
             case '1': {
+                printf("\e[1;1H\e[2J"); // Clear screen
                 std::cout << std::endl;
                 manager.listPlaylists();
                 break;
             }
             case '2': {
+                printf("\e[1;1H\e[2J"); // Clear screen
                 std::string playlistName;
                 std::cout << "\nEnter playlist name: ";
                 getline(cin,playlistName);
@@ -45,6 +47,7 @@ void displayPLaylistMenu(){
                 break;
             }
             case '3': {
+                printf("\e[1;1H\e[2J"); // Clear screen
                 std::string playlistName;
                 std::cout << "\nEnter playlist name: ";
                 getline(cin,playlistName);
@@ -52,6 +55,7 @@ void displayPLaylistMenu(){
                 break;
             }
             case '4': {
+                printf("\e[1;1H\e[2J"); // Clear screen
                 std::string playlistName;
                 std::cout << "\nEnter playlist name: ";
                 getline(cin,playlistName);
@@ -59,6 +63,7 @@ void displayPLaylistMenu(){
                 break;
             }
             case '5': {
+                printf("\e[1;1H\e[2J"); // Clear screen
                 std::string playlistName;
                 std::cout << "\nEnter playlist name: ";               
                 getline(cin,playlistName);

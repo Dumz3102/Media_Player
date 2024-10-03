@@ -76,18 +76,23 @@ void Playlist::playPlaylistWithControls() {
 
         switch (command) {
             case 'p':
+                printf("\e[1;1H\e[2J"); // Clear screen
                 pauseCurrentSong();
                 break;
             case 'r':
+                printf("\e[1;1H\e[2J"); // Clear screen
                 resumeCurrentSong();
                 break;
             case 'n':
+                printf("\e[1;1H\e[2J"); // Clear screen
                 nextSong();
                 break;
             case 'b':
+                printf("\e[1;1H\e[2J"); // Clear screen
                 previousSong();
                 break;
             case 's':
+                printf("\e[1;1H\e[2J"); // Clear screen
                 if (!showTimeFlag) {
                     showTimeFlag = true;  // Set the flag to start time display
                     timeThread = std::thread(displayTimeThread, std::ref(files[currentSongIndex]));  // Start time thread
