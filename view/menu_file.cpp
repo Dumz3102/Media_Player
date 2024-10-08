@@ -20,7 +20,7 @@ void displayTimeThread(File &file) {
 
         // Clear the previous line and print the current time
         cout << "\rTime: " << minutes << ":" << (seconds < 10 ? "0" : "") << seconds
-             << " / " << totalMinutes << ":" << (totalSeconds < 10 ? "0" : "") << totalSeconds
+             << " / " << totalMinutes << ":" << (totalSeconds < 10 ? "0" : "") << totalSeconds << " ||  Enter your choice: "
              << flush;
 
         // Sleep for 1 second before updating the time again
@@ -33,7 +33,7 @@ void displayTimeThread(File &file) {
 
 void displayMetadataMenu() {
     string filePath;
-
+    cin.ignore(); // Ignore the newline character left in the buffer
     // Prompt user for the file path
     cout << "Enter the path of your file: ";
     getline(cin, filePath);

@@ -1,6 +1,6 @@
 #include "media_controller.hpp"
 
-void drawVolumeBar(WINDOW* win, int currentVolume, int maxVolume) {
+void Media_controller::drawVolumeBar(WINDOW* win, int currentVolume, int maxVolume) {
     int barWidth = 50;  // Chiều dài thanh tiến trình
     int filledWidth = (currentVolume * barWidth) / maxVolume;  // Độ dài phần được lấp đầy dựa trên âm lượng hiện tại
 
@@ -22,7 +22,7 @@ void drawVolumeBar(WINDOW* win, int currentVolume, int maxVolume) {
     mvwprintw(win, 6, 2, "Volume: %d%%", (currentVolume * 100) / maxVolume);
 }
 
-void manageVolume(WINDOW* main_win) {
+void Media_controller::manageVolume(WINDOW* main_win) {
     // Keep ncurses running, no need to end it
     int maxVolume = MIX_MAX_VOLUME; // Max volume value (100%)
     int currentVolume = Mix_VolumeMusic(-1); // Get current music volume
@@ -67,7 +67,7 @@ void manageVolume(WINDOW* main_win) {
     }
 }
 
-void displayMenu(WINDOW* main_win, int highlight) {
+void Media_controller::displayMenu(WINDOW* main_win, int highlight) {
     werase(main_win);                                         // Delete window
     box(main_win,0,0);                                        // Bounding window
     refresh();                                                
@@ -93,7 +93,7 @@ void displayMenu(WINDOW* main_win, int highlight) {
     wrefresh(main_win);                                       // Update and refresh window
 }
 
-void manageMetadata() {
+void Media_controller::manageMetadata() {
     // Exit ncurses mode to allow normal terminal I/O
     endwin();
 
@@ -109,7 +109,7 @@ void manageMetadata() {
     curs_set(0);
 }
 
-void manageMediafiles(){
+void Media_controller::manageMediafiles(){
     // Exit ncurses mode to allow normal terminal I/O
     endwin();
 
@@ -125,7 +125,7 @@ void manageMediafiles(){
     curs_set(0);
 }
 
-void managePlaylist(){
+void Media_controller::managePlaylist(){
     // Exit ncurses mode to allow normal terminal I/O
     endwin();
 
@@ -141,7 +141,7 @@ void managePlaylist(){
     curs_set(0);
 }
 
-void managePlaySong(){
+void Media_controller::managePlaySong(){
     // Exit ncurses mode to allow normal terminal I/O
     endwin();
 

@@ -8,7 +8,7 @@ bool isPlaying = true;      // Check if music is playing
 bool isExiting = false;     // Flag to indicate if the program is exiting
 
 // Function to play music
-void playMusic(const string& filename) {
+void Folder_manager::playMusic(const string& filename) {
     Mix_Music* music = Mix_LoadMUS(filename.c_str());
     if (!music) {
         cout << "Can't load music: " << Mix_GetError() << endl;
@@ -25,7 +25,7 @@ void playMusic(const string& filename) {
 }
 
 // Function to display the menu
-void displayMenu() {
+void Folder_manager::displayMenu() {
     cout << "\nType 'p' to pause the song\n";
     cout << "Type 'r' to resume the song\n";
     cout << "Type 'n' to next the song\n";
@@ -35,7 +35,7 @@ void displayMenu() {
 }
 
 // Callback function when music finishes
-void onMusicFinished() {
+void Folder_manager::onMusicFinished() {
     if (isExiting) {
         return;  // Prevent playing the next track if the program is quitting
     }
@@ -47,7 +47,7 @@ void onMusicFinished() {
     displayMenu();  // Re-display the menu
 }
 
-void managerFolder() {
+void Folder_manager::managerFolder() {
     // SDL init
     if (SDL_Init(SDL_INIT_AUDIO) < 0) {
         cout << "SDL can't init: " << SDL_GetError() << endl;

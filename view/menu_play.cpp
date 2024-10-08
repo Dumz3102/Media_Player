@@ -20,7 +20,7 @@ void displaySongMenu(){
                 break;
             case 2:
                 printf("\e[1;1H\e[2J"); // Clear screen
-                managerFolder();   // Play songs in folder
+                Folder_manager::managerFolder();   // Play songs in folder
                 break;
             case 3:
                 cout << "Exiting metadata management...\n";

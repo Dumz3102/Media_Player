@@ -18,7 +18,7 @@ int main(){
     int height, width;
     getmaxyx(stdscr, height, width);
     WINDOW* main_win = newwin(HEIGHT, WIDTH, (height - HEIGHT) / 2, (width - WIDTH) / 2);
-    displayMenu(main_win, highlight);
+    Media_controller::displayMenu(main_win, highlight);
 
     int choice;
     bool exitProgram = false;
@@ -43,26 +43,26 @@ int main(){
                     case 0:
                         // Play song (implement this later)
                         printf("\e[1;1H\e[2J"); // Clear screen
-                        managePlaySong();
+                        Media_controller::managePlaySong();
                         break;
                     case 1:
                         // Manage metadata
                         printf("\e[1;1H\e[2J"); // Clear screen
-                        manageMetadata();
+                        Media_controller::manageMetadata();
                         break;
                     case 2:
                         // Manage playlist
                         printf("\e[1;1H\e[2J"); // Clear screen
-                        managePlaylist();
+                        Media_controller::managePlaylist();
                         break;
                     case 3:
                         // View media file
                         printf("\e[1;1H\e[2J"); // Clear screen
-                        manageMediafiles();
+                        Media_controller::manageMediafiles();
                         break;
                     case 4:
                         printf("\e[1;1H\e[2J"); // Clear screen
-                        manageVolume(main_win);
+                        Media_controller::manageVolume(main_win);
                         break;
                     case 5:
                         exitProgram = true;
@@ -71,7 +71,7 @@ int main(){
                 break;
         }
 
-        displayMenu(main_win, highlight);
+        Media_controller::displayMenu(main_win, highlight);
     }
 
     // Close the audio system
